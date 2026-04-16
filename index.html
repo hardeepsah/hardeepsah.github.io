@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Hardeep Sah · iOS & macOS Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif;
+            color: #1d1d1f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Header / Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1d1d1f, #48484a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.015em;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #e8e8ed;
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.8rem;
+            color: #1d1d1f;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #6e6e73;
+            max-width: 650px;
+            margin: 1rem auto 0;
+        }
+
+        /* Section headings */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 640;
+            letter-spacing: -0.01em;
+            margin: 2.5rem 0 1.5rem 0;
+            border-left: 6px solid #007aff;
+            padding-left: 1rem;
+        }
+
+        .section-sub {
+            color: #6e6e73;
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Apps grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .app-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            overflow: hidden;
+            border: 0.5px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-content {
+            padding: 1.6rem 1.6rem 1.8rem;
+            flex: 1;
+        }
+
+        .app-name {
+            font-size: 1.65rem;
+            font-weight: 680;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.3rem;
+            line-height: 1.25;
+        }
+
+        .platform {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: #e9e9ef;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-bottom: 0.8rem;
+            color: #1d1d1f;
+        }
+
+        .price-badge {
+            font-weight: 600;
+            background: #007aff10;
+            border: 0.5px solid #007aff30;
+            border-radius: 20px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #3a3a3e;
+            margin: 0.8rem 0 1.2rem 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1rem 0 1.2rem;
+            font-size: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .features-list li {
+            background: #f2f2f5;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #2c2c2e;
+        }
+
+        .app-store-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #007aff;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: 0.15s;
+            margin-top: 0.5rem;
+        }
+
+        .app-store-link:hover {
+            background: #005fc1;
+            transform: scale(0.97);
+        }
+
+        /* footer */
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+            border-top: 1px solid #d2d2d6;
+            color: #6e6e73;
+            font-size: 0.85rem;
+        }
+
+        .privacy-note {
+            background: #eef2ff;
+            border-radius: 24px;
+            padding: 1rem 1.6rem;
+            margin: 2rem 0 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #1d1d1f;
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero">
+        <h1>Hardeep Sah</h1>
+        <div class="badge">iOS & macOS Developer — Crafting purposeful apps</div>
+        <p>Minimal, powerful, privacy-first tools for study, productivity, wellness & fun.</p>
+    </div>
+
+    <!-- Mac & iOS Apps combined (sorted by category) -->
+    <div class="section-title">📱 Productivity & Utilities</div>
+    <div class="apps-grid">
+        <!-- MultiSession Browser (macOS) -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">🖥️ macOS · Utility</div>
+                <div class="app-name">MultiSession Browser</div>
+                <div class="description">
+                    Workspace for grid web browser. Run multiple isolated sessions side‑by‑side — QA testing, multi‑account management, cross‑environment workflows. Independent cookies, storage & auth.
+                </div>
+                <ul class="features-list">
+                    <li>Grid layout</li><li>Isolated sessions</li><li>Dev & support</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/multisession-browser/id6759280007?mt=12" target="_blank" rel="noopener" class="app-store-link">View on Mac App Store →</a>
+            </div>
+        </div>
+
+        <!-- FocusCanvas (macOS) -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">🖌️ macOS · Productivity</div>
+                <div class="app-name">FocusCanvas <span class="price-badge">$2.00</span></div>
+                <div class="description">
+                    Infinite canvas for mind maps, notes & visual planning. 40+ templates: project plans, brainstorming, system design, journaling. Sketch, embed media, tasks.
+                </div>
+                <ul class="features-list">
+                    <li>Mind maps</li><li>Infinite canvas</li><li>Templates</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/focuscanvas/id6757100228?mt=12" target="_blank" rel="noopener" class="app-store-link">View on Mac App Store →</a>
+            </div>
+        </div>
+
+        <!-- Slash Shopping Buddy (iOS) -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">📱 iPhone · Shopping</div>
+                <div class="app-name">Slash: Your Shopping Buddy</div>
+                <div class="description">
+                    Smart discount calculator, barcode scanner, shopping lists with budgets, stacked discounts, cart coupons. Works offline — know the final price before checkout.
+                </div>
+                <ul class="features-list">
+                    <li>OCR price scan</li><li>Stacked % off</li><li>Budget tracker</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/slash-your-shopping-buddy/id6761165435" target="_blank" rel="noopener" class="app-store-link">Download on App Store →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">📖 Faith & Reflection</div>
+    <div class="apps-grid">
+        <!-- BibleDesk -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">📖 iOS / macOS · Reference</div>
+                <div class="app-name">BibleDesk <span class="price-badge">$10.00</span></div>
+                <div class="description">
+                    Study, journal & explore scripture. Apple Intelligence Bible Assistant (Scholar, Devotional, Pastor modes). 10+ translations, Strong's concordance, reading plans, prayer journal.
+                </div>
+                <ul class="features-list">
+                    <li>AI insights</li><li>Verse compare</li><li>Journaling</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/bibledesk/id6754764564" target="_blank" rel="noopener" class="app-store-link">View on App Store →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">🧠 Health & Mindfulness</div>
+    <div class="apps-grid">
+        <!-- MoodMend Meditation -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">🧘 iPhone · Health & Fitness</div>
+                <div class="app-name">MoodMend - Meditation</div>
+                <div class="description">
+                    Intelligent mood tracking with AI insights, triggers & patterns. Guided wellness rituals, Apple Health integration, progress streaks. Understand emotions & build resilience.
+                </div>
+                <ul class="features-list">
+                    <li>Mood analytics</li><li>Apple Health</li><li>Rituals & streaks</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/moodmend-meditation/id6755509371" target="_blank" rel="noopener" class="app-store-link">Download on App Store →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">🎮 Learning & Games</div>
+    <div class="apps-grid">
+        <!-- Tug of War Math -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">📱 iPad / iPhone · Education</div>
+                <div class="app-name">Tug of War Math - Race Edition</div>
+                <div class="description">
+                    Head‑to‑head math race. Two teams compete solving arithmetic (add/sub/mul/div). Adjustable difficulty, collectible vehicle themes (race car, rocket, speedboat).
+                </div>
+                <ul class="features-list">
+                    <li>Multiplayer same device</li><li>Mixed mode</li><li>Vehicle skins</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/tug-of-war-math-race-edition/id6759492187" target="_blank" rel="noopener" class="app-store-link">View on App Store →</a>
+            </div>
+        </div>
+
+        <!-- LetterChallenge -->
+        <div class="app-card">
+            <div class="card-content">
+                <div class="platform">📱 iPhone · Word Game</div>
+                <div class="app-name">LetterChallenge</div>
+                <div class="description">
+                    Elegant word search with 35 hand‑crafted themes (Fantasy, Space, Dinosaurs, Christmas). Over 500 words, 4 difficulty levels (8x8 to 15x15). Relaxing & beautiful design.
+                </div>
+                <ul class="features-list">
+                    <li>35 themes</li><li>Drag-to-select</li><li>Hints & streaks</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/letterchallenge/id6755724525" target="_blank" rel="noopener" class="app-store-link">Download on App Store →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- extra: privacy-first statement -->
+    <div class="privacy-note">
+        🔒 Privacy-first development — Every single app collects <strong>zero personal data</strong>. No tracking, no analytics. Just powerful, offline‑first experiences built with Swift & Apple technologies.
+    </div>
+
+    <div class="footer">
+        <p>Hardeep Kumar Sah — Independent iOS & macOS developer</p>
+        <p style="margin-top: 6px;">© 2026 All apps available on the App Store. Designed with care for Mac, iPhone & iPad.</p>
+        <p style="margin-top: 6px; font-size: 0.75rem;">
+            <a href="#" style="color: #007aff; text-decoration: none;">App support</a>   |
+            <a href="#" style="color: #007aff; text-decoration: none;">Privacy policy (all apps)</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
